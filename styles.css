@@ -259,6 +259,21 @@ ul {
   width: 100%;
 }
 
+/* Active page in the nav */
+.nav-links a[aria-current="page"] {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.nav-links a[aria-current="page"]::after {
+  width: 100%;
+}
+
+.nav-mobile a[aria-current="page"] {
+  color: var(--accent);
+  font-weight: 600;
+}
+
 .nav-cta {
   padding: 10px 22px;
   font-size: 0.8125rem;
@@ -1394,4 +1409,197 @@ ul {
 
 .skip-link:focus {
   top: 0;
+}
+
+/* ============================================================
+   INTERIOR PAGE HEADER (banner for About / Services / Contact)
+   ============================================================ */
+.page-header {
+  position: relative;
+  padding: 150px 0 70px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.page-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(18,32,45,0.82) 0%, rgba(31,107,119,0.72) 100%);
+}
+
+.page-header .container {
+  position: relative;
+  z-index: 1;
+}
+
+.page-header .page-eyebrow {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 14px;
+}
+
+.page-header h1 {
+  font-family: var(--serif);
+  font-weight: 700;
+  color: #fff;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.page-header .page-lead {
+  margin-top: 18px;
+  max-width: 640px;
+  color: rgba(255,255,255,0.9);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.page-header .page-breadcrumb {
+  margin-top: 20px;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.7);
+}
+
+.page-header .page-breadcrumb a { color: rgba(255,255,255,0.9); }
+.page-header .page-breadcrumb a:hover { color: #fff; }
+
+/* Background images per interior page */
+.page-header.ph-about    { background-image: url("images/img14.jpg"); }
+.page-header.ph-services { background-image: url("images/img03.jpg"); }
+.page-header.ph-contact  { background-image: url("images/img09.jpg"); }
+
+/* ============================================================
+   CTA BAND (bottom-of-page prompt to book)
+   ============================================================ */
+.cta-band {
+  background: linear-gradient(135deg, var(--ink) 0%, var(--accent-deep) 100%);
+  color: #fff;
+  text-align: center;
+}
+
+.cta-band .cta-band-inner {
+  padding: 72px 0;
+}
+
+.cta-band h2 {
+  font-family: var(--serif);
+  font-weight: 700;
+  color: #fff;
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  margin-bottom: 14px;
+}
+
+.cta-band p {
+  color: rgba(255,255,255,0.85);
+  max-width: 560px;
+  margin: 0 auto 28px;
+  font-size: 1.02rem;
+  line-height: 1.6;
+}
+
+.cta-band .cta-band-actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-band .btn-secondary {
+  border-color: rgba(255,255,255,0.6);
+  color: #fff;
+}
+
+.cta-band .btn-secondary:hover {
+  background: rgba(255,255,255,0.12);
+  border-color: #fff;
+}
+
+/* ============================================================
+   ABOUT PAGE — team + prose blocks
+   ============================================================ */
+.about-prose {
+  max-width: 760px;
+}
+
+.about-prose p {
+  color: var(--ink-light);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  margin-bottom: 20px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  margin-top: 40px;
+}
+
+.team-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(27,42,58,0.06);
+}
+
+.team-card-img {
+  height: 240px;
+  background-size: cover;
+  background-position: center top;
+}
+
+.team-card-body { padding: 24px; }
+
+.team-card-name {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.team-card-role {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+.team-card-desc {
+  color: var(--ink-light);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.staff-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 24px;
+  list-style: none;
+  padding: 0;
+}
+
+.staff-list li {
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 10px 22px;
+  font-weight: 600;
+  color: var(--ink);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 640px) {
+  .team-grid { grid-template-columns: 1fr; }
 }

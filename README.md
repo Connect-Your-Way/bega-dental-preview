@@ -6,10 +6,11 @@ A proposed refresh of the **Bega Dental Surgery & Laboratory** website, for revi
 
 ## What this is
 
-A single-page homepage concept showing an upgraded, modern look and feel for
-Bega Dental. It uses the practice's **existing information** — services, phone,
-email, address, service area, and accepted schemes (HICAPS, Medicare, DVA) — so
-the content is accurate; only the presentation is new.
+A multi-page website concept showing an upgraded, modern look and feel for
+Bega Dental — **Home**, **About Us**, **Services**, and **Contact** pages. It uses
+the practice's **existing information** — services, team, phone, email, address,
+service area, and accepted schemes (HICAPS, Medicare, DVA) — so the content is
+accurate; only the presentation is new.
 
 ## Please note (placeholders)
 

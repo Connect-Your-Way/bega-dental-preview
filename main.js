@@ -41,6 +41,9 @@
 (function initHero() {
   const slides    = Array.from(document.querySelectorAll('.hero-slide'));
   const dots      = Array.from(document.querySelectorAll('.hero-dot'));
+  const heroSection = document.getElementById('hero');
+  // Interior pages have no carousel — bail out cleanly.
+  if (!heroSection || slides.length === 0) return;
   const INTERVAL  = 5000;
   let current     = 0;
   let timer       = null;
@@ -75,7 +78,6 @@
   });
 
   // Pause on hero hover / focus (accessibility + UX)
-  const heroSection = document.getElementById('hero');
   heroSection.addEventListener('mouseenter', function () { clearInterval(timer); });
   heroSection.addEventListener('mouseleave', startTimer);
   heroSection.addEventListener('focusin',    function () { clearInterval(timer); });
