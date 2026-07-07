@@ -2,7 +2,7 @@
 
 A proposed refresh of the **Bega Dental Surgery & Laboratory** website, for review.
 
-**▶ Live preview:** _(link will appear here once GitHub Pages finishes building)_
+**▶ Live preview:** https://connect-your-way.github.io/bega-dental-preview/
 
 ## What this is
 
