@@ -90,51 +90,112 @@
     </section>
 
     <!-- DENTIST + TEAM -->
-    <section style="background:var(--bg-soft);" aria-labelledby="about-team-title">
+    <section class="team-section" aria-labelledby="about-team-title">
       <div class="container">
-        <header class="text-center reveal" style="max-width:640px;margin:0 auto 8px;">
+        <header class="text-center reveal" style="max-width:640px;margin:0 auto 0;">
           <p class="section-label">Our Team</p>
           <h2 class="section-title" id="about-team-title">Meet the People Behind Your Smile</h2>
+          <p class="section-body" style="margin:0 auto;">Experienced, caring professionals who make every visit comfortable — from your first call to your last appointment.</p>
         </header>
 
-        <div class="team-grid reveal">
+        <!-- Individual team cards — 5 members -->
+        <div class="team-grid-5 reveal">
 
-          <div class="team-card">
-            <div class="team-card-img" style="background-image:url('images/img13.jpg');"></div>
-            <div class="team-card-body">
-              <div class="team-card-name">Dr Jake Yu</div>
-              <div class="team-card-role">General Dentist · BDS</div>
-              <p class="team-card-desc">
-                Dr Jake Yu provides general dental care for patients of all ages, from
+          <!-- Dr Jake Yu — real portrait -->
+          <article class="team-card-v2 team-card-featured" aria-label="Dr Jake Yu, General Dentist">
+            <div class="team-card-v2-portrait">
+              <img src="images/img13.jpg" alt="Dr Jake Yu, General Dentist at Bega Dental Surgery" width="400" height="400">
+            </div>
+            <div class="team-card-v2-body">
+              <div class="team-card-v2-name">Dr Jake Yu</div>
+              <div class="team-card-v2-role">General Dentist &middot; BDS</div>
+              <p class="team-card-v2-desc">
+                Dr Jake Yu provides general dental care for patients of all ages — from
                 routine check-ups and cleanings through to fillings, crowns, bridges,
-                extractions, teeth whitening and veneers. He believes in building lasting
-                relationships with his patients — prioritising prevention, patient education
-                on good oral hygiene, and personalised long-term treatment plans in a
-                calm, comfortable setting.
+                extractions, teeth whitening, and veneers. He focuses on building lasting
+                patient relationships, prioritising prevention, patient education, and
+                personalised long-term treatment plans in a calm, comfortable setting.
               </p>
             </div>
-          </div>
+          </article>
 
-          <div class="team-card">
-            <div class="team-card-img" style="background-image:url('images/img14.jpg');"></div>
-            <div class="team-card-body">
-              <div class="team-card-name">Our Support Team</div>
-              <div class="team-card-role">Reception &amp; Dental Care</div>
-              <p class="team-card-desc">
-                Behind every visit is a friendly, experienced support team who make sure
-                you feel welcome from the moment you walk in — helping with appointments,
-                health-fund claims, and chairside care.
-              </p>
-              <ul class="staff-list">
-                <li>Jennifer Jennings</li>
-                <li>Jacqueline Radford</li>
-                <li>Rachel Heffernan</li>
-                <li>Emily DeFriskbom</li>
-              </ul>
+          <!-- Jennifer Jennings — monogram avatar -->
+          <article class="team-card-v2" aria-label="Jennifer Jennings, Dental Team">
+            <div class="team-card-v2-portrait">
+              <div class="team-monogram" aria-hidden="true">
+                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                  <circle cx="100" cy="100" r="100" fill="#1b2a3a"/>
+                  <circle cx="100" cy="100" r="96" fill="none" stroke="#2f8f9d" stroke-width="2" opacity="0.35"/>
+                  <text x="100" y="118" text-anchor="middle" font-family="'Playfair Display', Georgia, serif" font-size="72" font-weight="700" fill="#2f8f9d" letter-spacing="-2">JJ</text>
+                </svg>
+              </div>
             </div>
-          </div>
+            <div class="team-card-v2-body">
+              <div class="team-card-v2-name">Jennifer Jennings</div>
+              <div class="team-card-v2-role">Dental Team</div>
+              <p class="team-card-v2-desc">Part of our friendly team, here to make every visit as comfortable and welcoming as possible.</p>
+              <p class="team-card-v2-photo-note" aria-label="Portrait photo coming soon">Photo coming soon</p>
+            </div>
+          </article>
 
-        </div>
+          <!-- Jacqueline Radford — monogram avatar -->
+          <article class="team-card-v2" aria-label="Jacqueline Radford, Dental Team">
+            <div class="team-card-v2-portrait">
+              <div class="team-monogram" aria-hidden="true">
+                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                  <circle cx="100" cy="100" r="100" fill="#1b2a3a"/>
+                  <circle cx="100" cy="100" r="96" fill="none" stroke="#2f8f9d" stroke-width="2" opacity="0.35"/>
+                  <text x="100" y="118" text-anchor="middle" font-family="'Playfair Display', Georgia, serif" font-size="72" font-weight="700" fill="#2f8f9d" letter-spacing="-2">JR</text>
+                </svg>
+              </div>
+            </div>
+            <div class="team-card-v2-body">
+              <div class="team-card-v2-name">Jacqueline Radford</div>
+              <div class="team-card-v2-role">Dental Team</div>
+              <p class="team-card-v2-desc">Part of our friendly team, here to make every visit as comfortable and welcoming as possible.</p>
+              <p class="team-card-v2-photo-note" aria-label="Portrait photo coming soon">Photo coming soon</p>
+            </div>
+          </article>
+
+          <!-- Rachel Heffernan — monogram avatar -->
+          <article class="team-card-v2" aria-label="Rachel Heffernan, Dental Team">
+            <div class="team-card-v2-portrait">
+              <div class="team-monogram" aria-hidden="true">
+                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                  <circle cx="100" cy="100" r="100" fill="#1b2a3a"/>
+                  <circle cx="100" cy="100" r="96" fill="none" stroke="#2f8f9d" stroke-width="2" opacity="0.35"/>
+                  <text x="100" y="118" text-anchor="middle" font-family="'Playfair Display', Georgia, serif" font-size="72" font-weight="700" fill="#2f8f9d" letter-spacing="-2">RH</text>
+                </svg>
+              </div>
+            </div>
+            <div class="team-card-v2-body">
+              <div class="team-card-v2-name">Rachel Heffernan</div>
+              <div class="team-card-v2-role">Dental Team</div>
+              <p class="team-card-v2-desc">Part of our friendly team, here to make every visit as comfortable and welcoming as possible.</p>
+              <p class="team-card-v2-photo-note" aria-label="Portrait photo coming soon">Photo coming soon</p>
+            </div>
+          </article>
+
+          <!-- Emily DeFriskbom — monogram avatar -->
+          <article class="team-card-v2" aria-label="Emily DeFriskbom, Dental Team">
+            <div class="team-card-v2-portrait">
+              <div class="team-monogram" aria-hidden="true">
+                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                  <circle cx="100" cy="100" r="100" fill="#1b2a3a"/>
+                  <circle cx="100" cy="100" r="96" fill="none" stroke="#2f8f9d" stroke-width="2" opacity="0.35"/>
+                  <text x="100" y="118" text-anchor="middle" font-family="'Playfair Display', Georgia, serif" font-size="72" font-weight="700" fill="#2f8f9d" letter-spacing="-2">ED</text>
+                </svg>
+              </div>
+            </div>
+            <div class="team-card-v2-body">
+              <div class="team-card-v2-name">Emily DeFriskbom</div>
+              <div class="team-card-v2-role">Dental Team</div>
+              <p class="team-card-v2-desc">Part of our friendly team, here to make every visit as comfortable and welcoming as possible.</p>
+              <p class="team-card-v2-photo-note" aria-label="Portrait photo coming soon">Photo coming soon</p>
+            </div>
+          </article>
+
+        </div><!-- /.team-grid-5 -->
       </div>
     </section>
 

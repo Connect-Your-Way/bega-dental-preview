@@ -1603,3 +1603,223 @@ ul {
 @media (max-width: 640px) {
   .team-grid { grid-template-columns: 1fr; }
 }
+
+/* ============================================================
+   ABOUT PAGE — individual team grid (5-card redesign)
+   Added: 2026-07-07
+   Replaces the 2-card team-grid with a 5-card grid where
+   Dr Jake Yu spans the full first row on desktop, and
+   support staff appear as a 4-col row beneath.
+   ============================================================ */
+
+/* Section wrapper — bg-soft to match original section tone */
+.team-section {
+  background: var(--bg-soft);
+  padding: var(--section-v) 0;
+}
+
+/* Section header spacing: push the grid away from the heading */
+.team-section header {
+  margin-bottom: 52px;
+}
+
+/* ── Grid shell ──────────────────────────────────────────── */
+.team-grid-5 {
+  display: grid;
+  /* Desktop: Dr Jake Yu spans full width in row 1; 4 staff split row 2 */
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto auto;
+  gap: 28px;
+}
+
+/* Featured card (Dr Jake Yu) spans all 4 columns on desktop */
+.team-card-featured {
+  grid-column: 1 / -1;
+  /* Switch to horizontal layout when the card spans the full row */
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+/* ── Base card styles ────────────────────────────────────── */
+.team-card-v2 {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(27,42,58,0.06);
+  transition: transform var(--transition), box-shadow var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.team-card-v2:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(27,42,58,0.11);
+}
+
+/* ── Portrait area ───────────────────────────────────────── */
+.team-card-v2-portrait {
+  /* Support staff: square-ish portrait area */
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: var(--bg-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Real photo fills its container */
+.team-card-v2-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+/* Monogram SVG container: fill the portrait area exactly */
+.team-monogram {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Subtle inset ring to hint "photo placeholder" */
+  border: 3px solid var(--border);
+  background: var(--bg-dark);
+}
+
+.team-monogram svg {
+  width: 72%;
+  height: 72%;
+}
+
+/* ── Featured card (horizontal) overrides ────────────────── */
+.team-card-featured {
+  flex-direction: row;
+  align-items: stretch;
+}
+
+/* Featured portrait: fixed width, full card height */
+.team-card-featured .team-card-v2-portrait {
+  width: 340px;
+  aspect-ratio: unset; /* let height stretch to card */
+  flex-shrink: 0;
+  border-radius: 0;
+}
+
+/* ── Card body ───────────────────────────────────────────── */
+.team-card-v2-body {
+  padding: 28px 28px 32px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.team-card-v2-name {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+
+.team-card-featured .team-card-v2-name {
+  font-size: 1.5rem;
+}
+
+.team-card-v2-role {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+
+.team-card-featured .team-card-v2-role {
+  margin-bottom: 16px;
+}
+
+.team-card-v2-desc {
+  color: var(--ink-light);
+  font-size: 0.9rem;
+  line-height: 1.65;
+  flex: 1;
+}
+
+.team-card-featured .team-card-v2-desc {
+  font-size: 0.975rem;
+}
+
+/* "Photo coming soon" note for placeholder cards */
+.team-card-v2-photo-note {
+  margin-top: 16px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--border);
+  color: #b8c6d0;
+}
+
+/* ── Responsive breakpoints ──────────────────────────────── */
+
+/* 3 staff per row on medium screens; featured card stays full-width */
+@media (max-width: 1024px) {
+  .team-grid-5 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .team-card-featured {
+    grid-column: 1 / -1;
+  }
+
+  .team-card-featured .team-card-v2-portrait {
+    width: 300px;
+  }
+}
+
+/* Tablet: featured card goes vertical; 2 staff per row */
+@media (max-width: 768px) {
+  .team-grid-5 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  /* Revert featured card to vertical stacking */
+  .team-card-featured {
+    flex-direction: column;
+  }
+
+  .team-card-featured .team-card-v2-portrait {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+
+  .team-card-featured .team-card-v2-portrait img {
+    object-position: center 20%;
+  }
+}
+
+/* Mobile: single column */
+@media (max-width: 480px) {
+  .team-grid-5 {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .team-card-featured {
+    grid-column: 1;
+  }
+
+  .team-card-featured .team-card-v2-portrait {
+    aspect-ratio: 4 / 3;
+  }
+
+  .team-section {
+    padding: 56px 0;
+  }
+}
