@@ -947,7 +947,13 @@ ul {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 64px;
-  align-items: start;
+  align-items: stretch;
+}
+
+/* Let the form card fill its column so it ends level with the map on the left */
+.appt-form-wrap {
+  display: flex;
+  flex-direction: column;
 }
 
 .contact-info .section-title {
@@ -1032,6 +1038,21 @@ ul {
   border-radius: var(--radius-lg);
   padding: 40px;
   box-shadow: 0 4px 32px rgba(27,42,58,0.08);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* The inner form fills the card; the submit + note settle at the bottom so the
+   card ends level with the map instead of leaving a void. */
+#appt-form {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+#appt-form .form-submit {
+  margin-top: auto;
 }
 
 .appt-form-title {
