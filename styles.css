@@ -1823,3 +1823,10 @@ ul {
     padding: 56px 0;
   }
 }
+
+/* Vertical rhythm for interior-page sections that don't carry an ID-based
+   padding rule (About Us welcome + facilities). Matches Home's section spacing;
+   --section-v steps down to 72px on mobile via the existing media query. */
+.section-pad {
+  padding: var(--section-v) 0;
+}
